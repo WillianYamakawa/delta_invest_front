@@ -1,5 +1,5 @@
 const config = {
-	url: "http://localhost:8081",
+	url: "https://api.deltainvest.tech",
 };
 
 export default async function save (path, method = "GET", body = null, expectResponse=true) {
