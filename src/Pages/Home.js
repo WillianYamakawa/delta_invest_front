@@ -240,7 +240,7 @@ export default function HomePage() {
 								</div>
 							</div>
 							<div className="card-content">
-								<h1 className="card-title">{`${data_contrato?.getDate()}/${data_contrato?.getMonth()}/${data_contrato?.getFullYear()}`}</h1>
+								<h1 className="card-title">{`${data_contrato?.getDate()}/${data_contrato?.getMonth() + 1}/${data_contrato?.getFullYear()}`}</h1>
 								<p className="card-sub">Data Inicio Contrato</p>
 							</div>
 						</div>
