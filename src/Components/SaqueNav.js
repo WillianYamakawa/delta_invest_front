@@ -13,31 +13,33 @@ export default function SaqueNav() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		async function a() {
-			const res = await fetcher("/saque/allowed");
-			if (res.err) {
-				if (res.err === 401) {
-					navigate("/");
-				} else {
-					setState("error");
-				}
-			} else {
-				const allowed = res.result.allowed;
-				if (allowed === true) {
-					setState("none");
-				} else {
-					setState(allowed);
-				}
-			}
-		}
 		a();
 	}, []);
+
+	async function a() {
+		const res = await fetcher("/saque/allowed");
+		if (res.err) {
+			if (res.err === 401) {
+				navigate("/");
+			} else {
+				setState("error");
+			}
+		} else {
+			const allowed = res.result.allowed;
+			if (allowed === true) {
+				setState("none");
+			} else {
+				setState("not");
+			}
+		}
+	}
 
 	function openModalSaque() {
 		setModalSaque(true);
 	}
 	function closeModalSaque() {
 		setModalSaque(false);
+		a();
 	}
 
 	function generateRandomText(length) {
@@ -78,7 +80,7 @@ export default function SaqueNav() {
 		</>
 	) : (
 		<div className="not">
-			<p>Próximo saque: {state}</p>
+			<p>Saque Todo Dia 10!</p>
 		</div>
 	);
 }

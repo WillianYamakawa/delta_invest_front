@@ -5,7 +5,7 @@ import CheckCircleOutlineRoundedIcon from '@mui/icons-material/CheckCircleOutlin
 import ReportGmailerrorredSharpIcon from '@mui/icons-material/ReportGmailerrorredSharp';
 import fetcher from '../data/fetcher'
 
-export default function Saque({ randomText }) {
+export default function Saque({ randomText}) {
 	const [typed, setTyped] = useState("");
 	const [status, setStatus] = useState("none");
 
